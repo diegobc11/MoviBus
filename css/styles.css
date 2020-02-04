@@ -1,0 +1,1125 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(206, 255, 142);
+    font-size: 16px;
+    margin: 0px;
+    position: relative;
+}
+
+/* --------menu Superior -------------*/
+.row {    
+    margin: 0px; 
+    position: relative;
+    height: 300px;
+}
+#logo-img {
+    background-image: url("../fotos/logoBusAmarillo300x110.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 400px;
+    height: 150px;
+    position: absolute;
+    top: 80px;
+    margin-left: -webkit-calc(50% - 500px);   /* posicionar elemento respecto al centro de la pagina */
+    margin-right: auto;
+    border: 3px solid white;
+    z-index: 2;   /* z-index nos permite superponer elementos, cuanto mayo sea el indice superior sera la capa en la que se encuentre */
+}
+.row > a {
+    margin-left: 30%;
+}
+#imagenFondoMenu {
+    width: 1100px;     /* si ponemos el ancho en % hacemos que escale cuando ampliamos la pestaña, poner segun el gusto */
+    height:100%;
+    /* position: absolute;
+    top: 0px; */
+    margin-left: auto;
+    margin-right: auto;
+    filter: blur(10px);   /* aplicamos un efecto borroso para que el fondo no coja demasiada importancia */
+    -webkit-filter: blur(10px); 
+    z-index: 1;
+}
+#idiomas {
+    position: absolute;
+    top: 20px;
+    margin-left: -webkit-calc(50% + 350px);
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    z-index: 2;
+}
+#idiomas a {
+    text-decoration: none; 
+    color: black;
+    padding: 10px;
+}
+#idiomas a:hover {
+    color:blue;
+    text-shadow: 0px 0px 20px;   /* al estar los dos en el mismo bloque la mejor manera de hacer hover es aplicado al texto solamente */
+}
+#sillaRuedas {
+    z-index: 2;
+    position:absolute;
+    top: 20px;
+    margin-left: -webkit-calc(50% + 300px);
+    width: 40px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 500px;
+}
+
+/*-----------barra de busqueda ---------*/
+.search-box {
+    position: absolute;
+    top: 230px;
+    left: -webkit-calc(50% + 22%);  /* (margin-left) 350 px lg*/
+    z-index: 2;
+    padding: 10px;
+    height: 50px;
+    width: 280px;
+    background: white;
+    border-radius: 50px;
+}
+.search-box > input.search-txt {
+    margin: 0px;
+    padding: 5px;
+    padding-left: 10px;
+    border: none;
+    outline: none;   /* para quitarle el recuadro que rodea al texto */
+    color: black;
+    background: white;
+}
+.search-box > .search-btn {
+    float: right;
+    margin-top: -4.5px;
+    width: 40px;
+    height: 40px;
+    background-color: #44bd32;
+    border-radius: 40px;
+    text-align: center;
+    padding-top: 8px;
+    /* otra forma de alinear seria: 
+    display: flex;
+    justify-content: center;
+    align-items: center;  */
+    /* Poner mensaje si se clica con el vacio o no se encuentra la info */
+}
+.search-box i {
+    color: white;
+}
+.search-box > .search-btn:hover {
+    background-color: rgb(0, 83, 0);
+    transition: .25s;
+    font-size: 140%;
+    padding-top: 5px;
+}
+
+/* ---------navbar -----------------*/
+div.navbar {    
+    /* con float lo podemos pegar a uno de los lados */         
+    background-color: green;
+    padding: 0px;
+    z-index: 3;   /* el sombreado se superponía un poco sobre el navigation bar, le damos prioridad */
+    border-radius: 5px; /* la display default de navbar es flex y esta propiedad no pone huecos entre las opciones que no queremos */
+    position: relative;
+}
+div.navbar a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    /*font-size: 1.14vw;    el tamaño maximo aproximado para que me aguante el menu en una sola linea para >1200px (pantalla grande) */
+    padding: 10px 20px;
+}
+div.navbar a:nth-child(even) {   /* alternamos colores en los apartados del menu para facilidad visual */
+    color: rgb(255, 202, 87);
+}
+div.navbar a:hover {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+}
+div.navbar .active {
+    background-color: #00b44b;
+    color: white;
+    border-radius: 5px;
+}
+/*--------------dropdown de la barra de busqueda --------------*/
+.dropdownBarra .dropbtnBarra {
+    border: none; 
+    outline: none; 
+    background-color: inherit;
+    padding: 10px 12px;
+    color: rgb(255, 202, 87);
+}
+.dropdownBarra .colorBlanco {
+    color: white;
+}
+#dropdownContentBarra1, #dropdownContentBarra2 {
+    background-color: #dafcc1;    
+    box-shadow: 0 8px 10px 0px;
+}
+#dropdownContentBarra1 a, #dropdownContentBarra2 a {
+    color: black;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+#dropdownContentBarra1 a:hover, #dropdownContentBarra2 a:hover {
+    background-color: white;
+}
+#dropdownContentBarra1 {
+    position: absolute;
+}
+#dropdownContentBarra2 {
+    position: absolute; 
+}
+.dropdownBarra:hover .dropbtnBarra {    
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+}
+.dropbtnBarra {
+    text-transform: uppercase;
+}
+/*-----------Cuerpo de la página ----------------*/
+#menuIzquierdo, #menuDerecho, #containerInfo {
+    float: left;
+}
+.mainContent {
+    margin-top: 50px;
+    width: 100%;
+}
+
+/* ------------Menu izquierdo -------------------*/
+#menuIzquierdo {
+    padding: 0px;
+    position: relative;  
+    max-width: 220px;  
+    margin-bottom: 100px;
+}
+
+/* -------Dropdown 1 menu general y sitios de interes ----*/
+#menuIzquierdo > a, .dropRight {
+    background-color: #97cdff;
+    color: #2f3640;
+    display: block;   /* necesario para que nos quede estilo menu */
+    width: 220px;
+    padding: 10px 0px;
+    font-size: 26px;  
+    text-decoration: none;  
+}
+#menuIzquierdo div.dropRight {
+    overflow: hidden;
+    padding: 0px;
+    margin-right: 0;
+}
+#menuIzquierdo div.dropRight .dropbtn {
+    font-size: 26px;
+    border: none;
+    background-color: #97cdff;
+    color: #2f3640;
+    font-family: inherit;
+    margin: 0px;
+    outline: none;
+    padding: 10px 0;
+    width: 100%;
+}
+.dropdown-content {
+    opacity: 0; 
+    font-size: 18px; 
+    position: absolute;
+    left: 220px;
+    top: 46.1%;  
+    min-width: 250px;
+    background-color: #353b48;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);   
+    z-index: 2;     
+}
+.dropdown-content a:nth-child(even), .dropdown-content2 a:nth-child(even) {
+    background-color: #3b455a;
+}
+.dropRight i.fa-map-pin, i.fa-suitcase-rolling {
+    padding-left: 15%;
+}
+.dropRight i.fa-chevron-right{
+    padding-left: 10%;
+}
+.dropdown-content a, .dropdown-content2 a {
+    float: none;
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    padding: 5px 5px 5px 20px;     
+}
+.dropdown-content a:hover, .dropdown-content2 a:hover {
+    background-color: #dcdde1;
+    color: black;
+}
+.dropRight:hover .dropdown-content, .dropRight:hover .dropdown-content2  {    
+    transition: .75s ease;
+    opacity: 1;
+}
+.dropbtn > span {
+    font-size: 0px;
+    visibility: hidden;
+}
+#menuIzquierdo > a:hover,#menuIzquierdo > .dropRight:hover .dropbtn {
+    background-color: #353b48;
+    color: white;
+}
+#menuIzquierdo > a span {
+    font-size: 0px;
+}
+#menuIzquierdo > a:hover {
+    transition: .1s;
+}
+#menuIzquierdo > a:hover span{
+    transition: .75s;
+    font-size: 20px;
+    padding-left: 15px;
+}
+.dropRight:hover .dropbtn span{
+    font-size: 20px;
+    transition: 1s;
+    visibility: visible;    
+}
+.dropRight:hover .dropbtn i {
+    padding-left: 5%;
+    transition: 1s;
+}
+#menuIzquierdo > a, .dropRight {
+    border-bottom: 1px solid white;
+}
+
+/* ------------Dropdown 2 estaciones -------*/
+.dropdown-content2 {
+    opacity: 0; 
+    font-size: 18px; 
+    position: absolute;
+    left: 220px;
+    top: 30.8%;  
+    min-width: 250px;
+    background-color: #353b48;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  
+    z-index: 2;    
+}
+.dropdown-content2 i {    
+    width: 35px;
+}
+.dropdown-content2  span {    
+    padding-left: 15px;
+}
+#menuIzquierdo a.active {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+/* --------------Menu Derecho ---------------*/
+#menuDerecho {
+    font-size: 26px;
+    padding: 10px;
+    float: right;
+    margin-right: 15px;
+    max-width: 240px;
+}
+
+/*--------Menu derecho: dosc descargables------*/
+#documentosDescarga, #juegoPeq, #nadalBus {
+    width: 220px;
+    border: 1px solid black;
+    border-radius: 40px 0 40px 0;
+    background-color: #97cdff;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px 0px #000000;    /* https://www.cssmatic.com/box-shadow pagina para simular multitud de efectos */
+    float: right;
+    
+}
+#documentosDescarga > div:nth-child(1) {
+    padding-bottom: 10px;
+    padding-right: 10px;
+    text-align: right;
+}
+#documentosDescarga > a:last-child {
+    padding-bottom: 15px;
+    font-size: 16px;
+}
+#documentosDescarga > a, #documentosDescarga > div{
+    display: block;   /* el display block tiene que adectar directamente al elemento que queremos, no a su elemento padre */
+    font-size: 20px;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+#documentosDescarga > a {
+    color:#1e3799;
+}
+.cortarTexto {
+    width: 220px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; /* Es un intento de ponerlo todo en una linea y el overflow indicarlo con puntos suspensivos*/
+}
+#documentosDescarga > a > i {
+    padding-right: 5px;
+}
+#documentosDescarga > a:hover{
+    color: #3d64ff;
+}
+#menuDerecho > div {
+    margin-bottom: 25px;
+}
+#documentosDescarga a:nth-child(6), #documentosDescarga a:nth-child(7) {
+    display: none;
+}
+/*--------Menu derecho: Juegos peque ------*/
+#juegoPeq {
+    position: relative;
+    height: 180px;
+}
+#juegoPeq a div:first-child {
+    height: 50px;
+    font-size: 16px;
+    text-align: right;
+    padding: 5px 10px;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    background-color: #97cdff;
+    border-radius: 20px 0 20px 0;
+    text-transform: uppercase;
+    align-items: center;   /* align-items junto con display flex me permiten orientar el texto verticalmente en el centro */
+    display: flex;
+    color: black;
+}
+#juegoPeq a:hover img {
+    width: 105%;
+    height: 105%;
+}
+#juegoPeq img {
+    height: 100%;
+    width: 100%;
+}
+#juegoPeq a:hover div {
+    color: #eb2f06;
+    transition: .25s;
+}
+
+/*--------Menu derecho: nadalBus------*/
+#nadalBus > a > #nadalBus-img, #nadalBus > a > #VigoNavidad{
+    width: 90%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+}
+#nadalBus div:first-child {
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: right;
+    padding: 10px 10px;
+    color: black;
+    text-decoration: none;
+}
+
+/*-----------Contenido Pagina Inicio --------*/
+#contenidoPag > h2 {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fffa65;
+}
+#containerInfo {
+    align-content: center;
+    padding: 0 40px;
+    position: absolute;	
+	left: 0;
+    right: 0;
+    min-height: 800px;
+    z-index: 1;
+}
+#containerInfo img.encabezado {
+    max-width: 100%;
+    max-height: 100%;
+    padding: 5px;
+    margin-bottom: 50px;
+    border: 2px solid black;
+    border-radius: 20px;
+    /* background-color: white; */
+}
+
+/* ----------Noticia 1-----------------*/
+.tituloNoticias span{
+    margin: 30px 0 5px;
+    line-height: 0;
+    display: inline-block;
+    position: relative;
+}
+.noticias {
+    height: 300px;
+    position: relative;
+    margin-bottom: 50px;
+}
+.tituloNoticias span:before, .tituloNoticias span:after {
+    content: "";
+    position: absolute;
+    /* height: 5px;      /* si le metemos altura podemos hacer dos lineas en paralelo */
+    border-bottom: 1px solid rgb(0, 0, 0);
+    /* border-top: 1px solid rgb(0, 0, 0);     descomentar si queremos doble linea*/
+    top: 0;
+    width: 100px;
+}
+.tituloNoticias span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+.tituloNoticias span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+.noticias > p {
+    font-size: 14px;
+    font-style: italic;
+}
+.noticias .archivosPreliminar {
+    margin: 0 auto;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    z-index: 3;
+}
+.noticias  #salidas24-31 > img, #salidas24-31segundo > img {
+    margin: 20px 20px 10px;
+    height: 150px;
+    width: 151px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 8px 2px black;
+    opacity: 0.8;
+}
+#salidas24-31 {
+    position: relative;
+    position: absolute;
+    margin-left: -webkit-calc(50% - 250px);  /* hay que usar dos relativas ya que también tenemos que posicionar a su vez el icono dentro de la foto */
+}
+#salidas24-31segundo {
+    position: relative;
+    position: absolute;
+    margin-left: -webkit-calc(50% + 50px);
+}
+#salidas24-31 .fa-expand-arrows-alt, #salidas24-31segundo .fa-expand-arrows-alt {
+    background-color: #6363638e;
+    font-size: 28px;
+    padding: 2px;
+    position: absolute;
+    bottom: 120px;
+    margin-left: -55px;
+    color: black;
+    cursor: pointer;
+    z-index: 2;
+}
+.popup .popuptext {
+    visibility: hidden;
+    width: 760px;
+    background-color: #555;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    z-index: 100;    
+}
+#myPopup1 {
+    position: absolute;
+    left: -140px;
+    top: -120px;
+}
+#myPopup2 {
+    position: absolute;
+    right: -130px;
+    top: -100px;
+}
+.popuptext .fa-times-circle  {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+}
+.popuptext .fa-times-circle:hover {
+    cursor: pointer;
+    color: rgb(209, 0, 0);
+}
+#salidas24-31 .descargar, #salidas24-31segundo .descargar  {
+    position: absolute;
+    top: 30px; 
+    left: 35px;
+    font-size: 22px;
+    background-color: rgba(128, 128, 128, 0.644);
+    padding: 0 5px;
+    color: #1e3799;
+    z-index: 2;
+}
+#salidas24-31 .descargar:hover, #salidas24-31segundo .descargar:hover,
+#L9A-lab .descargar:hover, #L9A-fest .descargar:hover,
+#L27-lab .descargar:hover {
+    color: #3d64ff;
+}
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+@keyframes fadeIn {    /* definimos el estado de fadeIN */
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+/*------------Noticia 2 ------------*/
+.noticias  #L9A-lab > img, #L9A-fest > img {
+    margin: 30px 20px 10px;
+    height: 150px;
+    width: 151px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 8px 2px black;
+    opacity: 0.8;
+}
+#L9A-lab {
+    position: relative;
+    position: absolute;
+    margin-left: -webkit-calc(50% - 250px);  
+}
+#L9A-fest {
+    position: relative;
+    position: absolute;
+    margin-left: -webkit-calc(50% + 50px);
+}
+#L9A-lab .fa-expand-arrows-alt, #L9A-fest .fa-expand-arrows-alt {
+    background-color: #6363638e;
+    font-size: 28px;
+    padding: 2px;
+    position: absolute;
+    bottom: 120px;
+    margin-left: -60px;
+    color: black;
+    cursor: pointer;
+    z-index: 2;
+}
+#L9A-lab .descargar, #L9A-fest .descargar  {
+    position: absolute;
+    top: 40px; 
+    left: 30px;
+    font-size: 22px;
+    background-color: rgba(128, 128, 128, 0.644);
+    padding: 0 5px;
+    color: #1e3799;
+    z-index: 2;
+}
+#L9A-lab .popuptext {
+    width: 590px;
+}
+#L9A-fest .popuptext {
+    width: 560px;
+}
+#L9A-lab .popuptext > img {    
+    margin: 0 1%;
+}
+#myPopup3 {
+    position: absolute;
+    left: -20px;
+    top: -100px;
+}
+#myPopup4 {
+    position: absolute;
+    right: -20px;
+    top: -100px;
+}
+.noticias #etiquetaArchivo div {
+    float: left;
+    margin-left: -webkit-calc(50% - 200px);
+}
+#etiquetaArchivo div:nth-child(2) {
+    margin-left: 200px;
+}
+
+/*--------------Noticia 3 ---------------*/
+.noticias  #L27-lab > img {
+    margin: 30px 20px 10px;
+    height: 150px;
+    width: 151px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 8px 2px black;
+    opacity: 0.8;
+}
+#L27-lab {
+    position: relative;
+    position: absolute;
+    margin-left: -webkit-calc(50% - 90px);    /* probar con transform: translateY(-50%)*/
+}
+#L27-lab .fa-expand-arrows-alt {
+    background-color: #6363638e;
+    font-size: 28px;
+    padding: 2px;
+    position: absolute;
+    bottom: 120px;
+    margin-left: -60px;
+    color: black;
+    cursor: pointer;
+    z-index: 2;
+}
+#L27-lab .descargar {
+    position: absolute;
+    top: 40px; 
+    left: 30px;
+    font-size: 22px;
+    background-color: rgba(128, 128, 128, 0.644);
+    padding: 0 5px;
+    color: #1e3799;
+    z-index: 2;
+}
+#myPopup5 {
+    position: absolute;
+    left: -500px;
+    top: -100px;
+}
+#L27-lab .popuptext {
+    width: 1180px;
+}
+
+/*-----------------Footer------------------*/
+footer {
+    background-color: #222;
+    position: absolute;
+    margin: 0;
+    top: 100%;
+    left: 0;
+    right: 0;
+    color: white;
+}
+footer section {
+    padding-top: 10px;
+}
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #222;
+}
+footer ul > li {
+    float: left;
+    margin:10px auto;
+    width: 33%;
+    text-align: center;
+    border: 0.3px solid rgb(255, 255, 255);
+    border-left: none;
+    border-right: none;
+}
+footer #politicasEmpresa ul > li {
+    width: 50%;
+}
+footer ul li > a {
+    display: block;
+    padding: 5px 5px;
+    text-decoration: none;
+    color: rgb(206, 255, 142);
+    position: relative;
+}
+footer ul li > a::after {
+    content: "";
+    background-color: white;
+    position: absolute;
+    height: 60%;
+    bottom: 20%;
+    left: 0px;
+    width: 1px;
+}
+footer ul li > a:hover {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    animation: cambiarColor 1s;
+}
+.primeroFila::after {
+    display: none;
+}
+.footer #elementoMasGrande::before, .footer #elementoMasGrande2::before {
+    content: attr(data-desktoptext);
+}
+#politicasEmpresa div {
+    padding-top: 20px;
+    text-align: right;
+}
+footer #textoPie, #textoPie2, #textoPie3  {
+    color: #adadad;
+    padding: 5px;
+    position: relative;
+}
+footer #dondeEstamos div::before {
+    content:"";
+    background-color: black;
+    position: absolute;
+    left: -5px;
+    width: 3px;
+    height: 90%;
+}
+footer #todoPoderoso {
+    padding-top: 40px;
+}
+#todoPoderoso span {
+    padding-left: 5px;
+    color:#10ac84;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+@keyframes cambiarColor {
+    0% {background: #74ff5e}
+    25% {background: #83ff70}
+    50% {background: #99ff89}
+    70% {background: #bdffb3}
+    85% {background: #ddfdd8}
+}
+
+/*-------cambio altura elementos del pie -------*/
+@media (min-width: 991px) {
+    .footer .listaPie {
+        height: 58px;
+        padding-top: 10px;
+    }
+    .footer #dondeEstamos ul > li:nth-child(2) a, footer #politicasEmpresa ul > li:nth-child(2) a  {
+        padding-top: 3px;
+    }
+
+}
+@media (max-width: 990px) {
+    .footer #elementoMasGrande::before, .footer #elementoMasGrande2::before  {
+        content: attr(data-phonetext);  
+    }
+    .footer .listaPie {
+        height: 34px;
+    }
+    .footer #politicasEmpresa li {
+        width: 50%;
+    }
+}
+
+/*---------footer: acceso empleados ---------*/
+.footer #empleados {
+    padding: 30px 0;
+}
+.footer #empleados button {
+    border-radius: 10px;
+    border-color: #97cdff;
+    color: white;
+}
+.footer #empleados button:hover {
+    background-color: #97cdff;
+    color: black;
+    transition: 1s background-color;  /* si ponemos una propiedad al lado la transition afecta solo a esa propiedad */
+}
+ 
+/* -----------Pantallas de 991px a 1199px----------*/
+@media (min-width: 991px) and (max-width: 1199px) {
+    #containerInfo {
+        padding: 0;
+    }
+    #encabezado #logo-img {
+        left: 75px;
+    }
+    #sillaRuedas, #idiomas {
+        left: -75px;
+    }
+    .search-box {
+        margin-left: -50px;
+    }
+}
+/*----------pantallas de 767px a 990px------------*/
+@media (min-width: 767px) and (max-width: 991px) {
+    #imagenFondoMenu {
+        width: 100%;
+    }
+    #containerInfo {
+        padding: 0;
+    }
+    #encabezado #logo-img {
+        left: 120px;
+        transform: scale(0.7);
+    }
+    #sillaRuedas, #idiomas {
+        left: -175px;
+        transform: scale( 0.8);
+    }
+    .search-box {
+        margin-left: -80px;
+        transform: scale(0.8);   /*reduce el div con todos sus contenidos de forma proporcional */
+    }
+    #menuSuperior > a {
+        font-size: 12px;
+        padding: 14px 13.75px;
+    }
+    .dropdownBarra .dropbtnBarra {
+        font-size: 12px;
+        text-transform: uppercase;
+        padding: 14px 17px;
+    }
+    #containerInfo {
+        transform: scale(0.8);
+        margin-top:-100px;
+    }
+    div#menuDerecho .flexbox-item {
+        max-width: 33%;
+    }
+
+}
+
+/*----------pantallas de 500px a 766px------------*/
+@media (min-width: 500px) and (max-width: 767px) {
+    #containerInfo .noticias {
+        transform: scale(0.75);
+    }
+    #imagenFondoMenu {
+        width: 100%;
+    }
+    div.row {
+        height: 250px;
+    }
+    div.navbar {
+        margin: 0px;
+    }
+    div.navbar a, div.navbar div{     
+        font-size: 12px;
+    }
+    div.navbar .contraer {
+        display: none;
+    }
+    #encabezado #logo-img {
+        top: 60px;
+        left: 190px;
+        transform: scale(0.6);
+    }
+    .search-box {
+        margin-left: -95px;
+        top: 200px;
+        transform: scale(0.6);
+    }
+    #sillaRuedas, #idiomas {
+        left: -272px;
+        transform: scale(0.7);
+    }
+}
+@media (max-width: 767px) {
+    div#menuDerecho {
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    div#menuDerecho div#documentosDescarga, div#menuDerecho div#juegoPeq, div#menuDerecho div#nadalBus {
+        height: 300px;
+        width: 100%;
+        max-width: 60%;
+        margin: 30px auto;
+        max-height: 350px;
+        box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.75);
+        transform: scale(0.8);
+    }
+}
+
+.navbarPeq {
+    display: none;
+}
+/*----------pantallas de menores de 500px------------*/
+@keyframes aumentar {
+    from {height: 0%;}
+    to {height: 100%;}
+}
+@media (max-width: 499px) {
+    .popup .popuptext {
+        transform: scale(0.5);
+    }
+    div#menuDerecho div#documentosDescarga a, div#menuDerecho div#juegoPeq div, div#menuDerecho div#nadalBus div{
+        font-size: 12px;
+    }
+    #containerInfo .noticias {
+        transform: scale(0.65);
+        margin:0px;
+    }
+    #imagenFondoMenu {
+        width: 100%;
+    }
+    .search-box {
+        top: 230px;
+        left: -50px;
+        transform: scale(0.5);
+    }
+    #sillaRuedas, #idiomas {
+        left: 0px;
+        margin: 0;
+        transform: scale(0.5);
+    }
+    #encabezado #logo-img {
+        top: 60px;
+        left: -50px;
+        margin: 0;
+        transform: scale(0.5);
+    }
+    .noticias .tituloNoticias {
+        transform: scale(0.9);
+        font-size: 15px;
+    }
+    #containerInfo #contenidoPag img.encabezado {
+        margin-bottom: 30px;
+    }
+    #contenidoPag h3 {
+        margin-bottom: -40px;
+    }
+    #containerInfo div.noticias {
+        margin-bottom: -50px;
+    }
+    #menuDerecho {
+        padding-top: 80px;
+    }
+    #containerInfo div.archivosPreliminar {
+        transform: scale(0.9);
+    }
+    #etiquetaArchivo {
+        display: none;
+    }
+    .navbar {
+        display:none;
+    }
+    .navbarPeq{
+        display:none;
+        position: relative;
+        z-index: 4;
+    }
+    .navbarPeq .dropBarraMin .btnBarraMin {
+        width: 100%;
+        height: 100%;
+        outline: none;
+        text-decoration: none;
+        border: none;
+        border: 1px solid white;
+        border-radius: 1px;
+        background-color: #353b48;
+        color: antiquewhite;
+        padding: 7px;
+        text-align: left;
+        padding-left: 20px;
+        position: relative;
+    }
+    .navbarPeq .btnBarraMin i {
+        width: 10px;
+        margin-right: 20px;
+    }
+    .navbarPeq .fa-angle-double-down {
+        position: absolute;
+        right: 0;
+    }
+    .navbarPeq .btnBarraMin::before {
+        content: "";
+        position:absolute;
+        width: 12px;
+        height: 12px;
+        background: #353b48;
+        transform: rotate(45deg);
+        left: 20px;
+        bottom: -6px;
+        z-index: 2;
+    }
+    .navbarPeq .btnSinSubMenu::before {   /*el primero y el ultimo no necesitan flecha ya que no tienen desplagable */
+        width: 0;
+    }
+    .navbarPeq .btnBarraMin i ,.navbarPeq .btnBarraMin span{        
+        color: antiquewhite;
+        cursor: pointer;
+    }
+    .dropBarraMin a {
+        display: block;
+        padding: 5px;
+        padding-left: 20px;
+        background-color: #f6e58d;
+        position: relative;
+        text-align: center;
+    }
+    .dropBarraMin div a span::after {
+        content: "";
+        height: 5px;
+        width: 75%;
+        background-color: #f0932b;
+        position: absolute;
+        bottom: -4px;
+        margin: 0 auto;
+		left: 0;
+        right: 0;
+    }
+    .desplegableMovil a:last-child span::after {
+        display:none;
+    }
+    .dropBarraMin a:nth-child(2) {  /* aunque sea el primer 'a hijo' de todos los tag 'a' es el segundo hijo ya que el primero es un div. */
+        padding-top: 10px;
+    }
+    .navbarPeq .btnBarraMin i {
+        transition: margin-left 1s;
+    }
+    .navbarPeq .btnBarraMin span {
+        transition: font-size 1s;
+    }
+    div#menuDerecho div#documentosDescarga, div#menuDerecho div#juegoPeq, div#menuDerecho div#nadalBus {
+        height: 100%;
+    }
+    #botonMenuDesplegable {
+        z-index: 5;
+        position: absolute;
+        top: 240px;
+        right: 20px;
+        font-size: 15px;
+        text-decoration: none;
+        background: linear-gradient(#576574, #10ac84);
+    }
+    .desplegableMovil a:active {
+        background-color: #f8a649;
+    }
+    .dropBarraMin {
+        overflow: hidden;
+    }
+    .desplegableMovil a.textoExpansible2,.desplegableMovil a.textoExpansible3,.desplegableMovil a.textoExpansible4,.desplegableMovil a.textoExpansible5 {
+        max-height: 0;
+        padding: 0;
+        overflow: hidden;
+        /* display: none; */
+    } 
+    .desplegableMovil a.activated {
+        transition: max-height 1.5s ease-out;       
+        max-height: 100px; 
+        padding: 5px;           
+    }
+    #documentosDescarga a:nth-child(6), #documentosDescarga a:nth-child(7) {
+        display: block;
+    }
+}
+/*--------Menu Derecho en max 1199px ----------*/
+@media (max-width: 1199px) {
+    #menuDerecho {
+        position: absolute;
+        margin: 0; 
+        width: 100%;
+        max-width: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background: linear-gradient(rgb(206, 255, 142),rgb(234, 255, 237), rgb(206, 255, 142));
+    }
+    #menuDerecho div#documentosDescarga, div#juegoPeq, div#nadalBus {
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;       
+        flex-grow: 1;
+        height: 300px;
+        max-width: 25%;
+        flex: 1;   /*espacio proporcional a todos los elementos de la caja*/
+        border: 2px solid black;
+    }
+    #menuIzquierdo {    
+        display: none;    
+    }
+}
+
+
+

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bienvenidos a MoviBus, Transporte Urbano de la Ciudad de Vigo</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<body id="cuerpo">
+    <div class="container" id="encabezado">  
+        <div class="row">
+            <a href="index.html" id="logo-img" title="MoviBus, Transporte Urbano"></a>
+            <img id="imagenFondoMenu" alt="Imagen de buses de fondo" class="center" src="fotos/vitrasasJuntos.jpg">
+            <div id="idiomas">
+                <a href="#" id="castellano" class="active" lang="es" title="Castellano">Español</a>
+                <a href="#" id="galego" lang="gl" title="Galego">Galego</a>
+            </div>
+            <div id="sillaRuedas" class="text-center">
+                <a href="#" title="Acceso silla de Ruedas">
+                    <i class="fas fa-wheelchair"></i>
+                </a>
+            </div>
+            <div class="search-box">
+                <input type="text" name="TextoBuscar" class="search-txt" placeholder="Texto a Buscar.."/>
+                <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
+            </div>
+            <button id="botonMenuDesplegable" onclick="desplegarMenu()"><i class="fas fa-bars"></i></button>
+        </div>
+        <div class="navbar" id="menuSuperior">   <!--Menu Superior-->
+            <a href="#" class="active">Inicio</a>                
+            <a href="#">La Empresa</a>
+            <div class="dropdownBarra" id="dropdownBarra1">
+                <button class="dropbtnBarra colorBlanco" id="btnBarra1">L&iacute;neas y Horarios <i class="fa fa-caret-down"></i></button>                
+                <div id="dropdownContentBarra1">
+                    <a href="#">Estaciones</a>
+                    <a href="#">Bus turistico</a>
+                    <a href="#">Bus Universidad</a>
+                    <a href="#">Bus Nocturno</a>
+                    <a href="#">Aeropuerto</a>
+                    <a href="#">Estadio</a>
+                </div>
+            </div>
+            <div class="dropdownBarra" id="dropdownBarra2">
+                <button class="dropbtnBarra" id="btnBarra2">Tarifas y Bonos <i class="fa fa-caret-down"></i></button>                                
+                <div id="dropdownContentBarra2">
+                    <a href="#">Tarifa Normal</a>
+                    <a href="#">Tarifa Estudiante</a>
+                    <a href="#">Tarifa Pensionista</a>
+                </div>
+            </div>
+            <a href="#" class="contraer">M&aacute;s informaci&oacute;n</a>
+            <a href="#" class="contraer">Contacto</a>
+        </div>
+        <div class="navbarPeq" id="menuColgante">
+            <div class="dropBarraMin">
+                <a class="btnBarraMin btnSinSubMenu" id="btnBarraMin1" onclick="fadeOut()"><i class="fas fa-home" id="iconoM"></i><span id="BarraMin1">Inicio</span></a>
+            </div>
+            <div class="dropBarraMin" id="tarifasBonos">
+                <a class="btnBarraMin" id="btnBarraMin2" onclick="fadeOut2()"><i class="fas fa-euro-sign" id="iconoM2"></i><span id="BarraMin2">Tarifas y Bonos</span><i class="fas fa-angle-double-down"></i></a>
+                <div class="desplegableMovil" id="contenidoDes2">
+                    <a class="textoExpansible2" id="textoExpansible2a"><span class="contenidoDesplegableMOV">Tarifa Ordinaria</span></a>
+                    <a class="textoExpansible2" id="textoExpansible2b"><span class="contenidoDesplegableMOV">Tarifa Juvenil</span></a>
+                    <a class="textoExpansible2" id="textoExpansible2c"><span class="contenidoDesplegableMOV">Tarifa Estudiante</span></a>
+                    <a class="textoExpansible2" id="textoExpansible2d"><span class="contenidoDesplegableMOV">Tarifa Pensionista</span></a>
+                </div>
+            </div>
+            <div class="dropBarraMin" id="lineasHorarios">
+                <a class="btnBarraMin" id="btnBarraMin3" onclick="fadeOut3()"><i class="far fa-clock" id="iconoM3"></i><span id="BarraMin3">L&iacute;neas y horarios</span><i class="fas fa-angle-double-down"></i></a>
+                <div class="desplegableMovil" id="contenidoDes3">
+                    <a class="textoExpansible3" id="textoExpansible3a"><span class="contenidoDesplegableMOV">Calcular Ruta</span></a>
+                    <a class="textoExpansible3" id="textoExpansible3b"><span class="contenidoDesplegableMOV">Turistico</span></a>
+                    <a class="textoExpansible3" id="textoExpansible3c"><span class="contenidoDesplegableMOV">Nocturno</span></a>
+                    <a class="textoExpansible3" id="textoExpansible3d"><span class="contenidoDesplegableMOV">Universidad</span></a>
+                    <a class="textoExpansible3" id="textoExpansible3e"><span class="contenidoDesplegableMOV">Estadio</span></a>
+                </div>
+            </div>
+            <div class="dropBarraMin" id="estacionesServicios">
+                <a class="btnBarraMin" id="btnBarraMin4" onclick="fadeOut4()"><i class="fas fa-suitcase" id="iconoM4"></i><span id="BarraMin4">Estaciones y Servicios</span><i class="fas fa-angle-double-down"></i></a>
+                <div class="desplegableMovil" id="contenidoDes4">
+                    <a class="textoExpansible4" id="textoExpansible4a"><span class="contenidoDesplegableMOV">Estaci&oacute;n Mar&iacute;tima</span></a>
+                    <a class="textoExpansible4" id="textoExpansible4b"><span class="contenidoDesplegableMOV">Estaci&oacute;n de Tren</span></a>
+                    <a class="textoExpansible4" id="textoExpansible4c"><span class="contenidoDesplegableMOV">Estaci&oacute;n de Bus</span></a>
+                    <a class="textoExpansible4" id="textoExpansible4d"><span class="contenidoDesplegableMOV">Aeropuerto</span></a>
+                    <a class="textoExpansible4" id="textoExpansible4e"><span class="contenidoDesplegableMOV">Hospital</span></a>
+                    <a class="textoExpansible4" id="textoExpansible4f"><span class="contenidoDesplegableMOV">Servicio PMR</span></a>
+                </div>
+            </div>
+            <div class="dropBarraMin" id="laEmpresa">
+                <a class="btnBarraMin" id="btnBarraMin5" onclick="fadeOut5()"><i class="fas fa-info-circle" id="iconoM5"></i><span id="BarraMin5">La Empresa</span><i class="fas fa-angle-double-down"></i></a>
+                <div class="desplegableMovil" id="contenidoDes5">
+                    <a class="textoExpansible5" id="textoExpansible5a"><span class="contenidoDesplegableMOV">Cont&aacute;cta con Nosotros</span></a>
+                    <a class="textoExpansible5" id="textoExpansible5b"><span class="contenidoDesplegableMOV">Atenci&oacute;n al cliente</span></a>
+                </div>
+            </div>
+            <div class="dropBarraMin">
+                <a href="#menuDerecho" class="btnBarraMin btnSinSubMenu" id="btnBarraMin6" onclick="fadeOut6()"><i class="far fa-plus-square" id="iconoM6"></i><span id="BarraMin6">M&aacute;s...</span></a>
+            </div>
+        </div>
+    </div>   <!--Fin del encabezado-->
+
+    <div class="mainContent">
+        <div id="menuIzquierdo" class="col-lg-2.5 vertical-menu text-center">            
+            <a href="index.html" id="inicioMenuIzq" class="active">Servicios</a>  
+            <a href="#" id="calculoRuta"><i class="fas fa-route"></i>
+                <span>Calcular Ruta</span>
+            </a>
+            <a href="#" id="horarioTiempoReal"><i class="far fa-clock"></i>
+                <span>Horarios</span>
+            </a>
+            <a href="#" id="aeropuerto"><i class="fas fa-plane-departure"></i>
+                <span>Aeropuerto</span>
+            </a>
+            <div class="dropRight" id="Estaciones">
+                <button class="dropbtn"><i class="fas fa-suitcase-rolling"></i><i class="fas fa-chevron-right"></i>
+                    <span>Estaciones</span>
+                </button>
+                
+                <div class="dropdown-content2">
+                    <a href="#" id="estMar"><i class="fas fa-ship"></i><span>Estaci&oacute;n Mar&iacute;tima</span></a>
+                    <a href="#" id="estTren"><i class="fas fa-train"></i><span>Estaci&oacute;n de Tren</span></a>
+                    <a href="#" id="estBus"><i class="fas fa-bus-alt"></i><span>Estaci&oacute;n de Bus</span></a>
+                </div>
+            </div>
+            <a href="#" id="hospital"><i class="far fa-hospital"></i>
+                <span>Hospital</span>
+            </a>
+            <div class="dropRight" id="sitiosInteres">
+                <button class="dropbtn"><i class="fas fa-map-pin"></i><i class="fas fa-chevron-right"></i>
+                    <span>Sitios de interés</span>
+                </button>
+                
+                <div class="dropdown-content">
+                    <a href="#" id="PTL">PTL, parque tec. log&iacute;stico</a>
+                    <a href="#" id="auditorio">Auditorio Mar de Vigo.</a>
+                    <a href="#" id="PSA">PSA</a>
+                </div>
+            </div>
+            <a href="#" id="servicioPMR"><i class="fas fa-wheelchair"></i>
+                <span>Servicio P.M.R.</span>
+            </a>
+            <a href="#" id="busTuristico"><i class="fas fa-university"></i>
+                <span>Bus tur&iacute;stico</span>
+            </a>
+            <a href="#" id="nocturno"><i class="far fa-moon"></i>
+                <span>Nocturno</span>
+            </a>
+            <a href="#" id="universidad"><i class="fas fa-graduation-cap"></i>
+                <span>Universidad</span>
+            </a>
+            <a href="#" id="futbol"><i class="far fa-futbol"></i>
+                <span>Estadio F&uacute;tbol</span>
+            </a>
+            <a href="#" id="atencionCliente"><i class="fas fa-info-circle"></i>
+                <span>Atenci&oacute;n Cliente</span>
+            </a>            
+        </div>
+        <!--Este div es el que va a contener la información de cada apartado-->
+        <div  id="containerInfo" class="container col-lg-7 text-center">
+            <div id="contenidoPag">
+                <h2><strong>¡Felices Fiestas!</strong></h2>
+                <img src="fotos/navidadVigoEstirada.JPG" class="encabezado" alt="Navidad en la ciudad de Vigo">
+                <h3><strong>Noticias</strong></h3>
+                <div class="noticias">
+                    <h4 class="tituloNoticias">
+                        <span>Últimas Salidas 24 y 31 diciembre</span>
+                    </h4>
+                    <p>Los próximos días 24 y 31 de Diciembre, las líneas realizarán sus últimos recorridos en los horarios adjuntos. [dummy images]</p>
+                    <div class="archivosPreliminar">
+                        <div id="salidas24-31">   
+                            <img src="fotos/sustituto24-31-736x752.jpg" title="salidas24-31">
+                            <a class="popup" onclick="myFunction1()">
+                                <span class="popuptext" id="myPopup1">
+                                    <img src="fotos/sustituto24-31-736x752.jpg" title="salidas24-31">
+                                    <i class="far fa-times-circle" title="Cerrar"></i>
+                                </span>
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </a>
+                            <a href="fotos/sustituto24-31-736x752.png" class="descargar" title="Descargar" download="salidas24-31"><i class="fas fa-download"></i></a>
+                        </div>
+                        <div id="salidas24-31segundo">   
+                            <img src="fotos/sustituto24-31-736x752.jpg" title="salidas24-31segundo">
+                            <a class="popup" onclick="myFunction2()">
+                                <span class="popuptext" id="myPopup2">
+                                    <img src="fotos/sustituto24-31-736x752.jpg" title="salidas24-31segundo">
+                                    <i class="far fa-times-circle" title="Cerrar"></i>                                    
+                                </span>
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </a>
+                            <a href="fotos/sustituto24-31-736x752.png" class="descargar" title="Descargar" download="salidas24-31_segundo"><i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="noticias">
+                    <h4 class="tituloNoticias">
+                        <span>Cambio horario L9A</span>
+                    </h4>
+                    <p>A partir del próximo viernes día 20 de diciembre la Línea 9 A  ajusta sus horarios, como plan especial de transporte de Navidad. [dummy images]</p>
+                    <div id="etiquetaArchivo">
+                        <div><strong>L9A laborables</strong></div>
+                        <div><strong>L9A festivos</strong></div>
+                    </div>
+                    <div class="archivosPreliminar">
+                        <div id="L9A-lab">   
+                            <img src="fotos/sustitutoLaborables-569x725.jpg" title="L9A laborables">
+                            <a class="popup" onclick="myFunction3()">
+                                <span class="popuptext" id="myPopup3">
+                                    <img src="fotos/sustitutoLaborables-569x725.jpg" title="L9A laborables">
+                                    <i class="far fa-times-circle" title="Cerrar"></i>
+                                </span>
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </a>
+                            <a href="fotos/sustitutoLaborables-569x725.jpg" class="descargar" title="Descargar" download="L9A_laborables"><i class="fas fa-download"></i></a>
+                        </div>
+                        <div id="L9A-fest">   
+                            <img src="fotos/sustitutoFestivos-541x772.jpg" title="L9A festivos">
+                            <a class="popup" onclick="myFunction4()">
+                                <span class="popuptext" id="myPopup4">
+                                    <img src="fotos/sustitutoFestivos-541x772.jpg" title="L9A festivos">
+                                    <i class="far fa-times-circle" title="Cerrar"></i>                                    
+                                </span>
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </a>
+                            <a href="fotos/sustitutoFestivos-541x772.jpg" class="descargar" title="Descargar" download="L9A_festivos"><i class="fas fa-download"></i></a>
+                        </div>                        
+                    </div>
+                </div>
+                <div class="noticias">
+                    <h4 class="tituloNoticias">
+                        <span>Cambio horario L27 laborables</span>
+                    </h4>
+                    <p>A partir del próximo viernes día 20 de Diciembre la Línea 27  ajusta sus horarios, como plan especial de transporte de Navidad. [dummy images]</p>
+                    <div class="archivosPreliminar">
+                        <div id="L27-lab">   
+                            <img src="fotos/sustitutoL27-1168x621.jpg" title="L27 laborables">
+                            <a class="popup" onclick="myFunction5()">
+                                <span class="popuptext" id="myPopup5">
+                                    <img src="fotos/sustitutoL27-1168x621.jpg" title="L27 laborables">
+                                    <i class="far fa-times-circle" title="Cerrar"></i>
+                                </span>
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </a>
+                            <a href="fotos/sustitutoL27-1168x621.jpg" class="descargar" title="Descargar" download="L27_laborables"><i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div id="menuDerecho" class="flexbox-container col-lg-2.5">
+            <div id="documentosDescarga" class="flexbox-item">
+                <div>
+                    Descargables
+                </div>
+                <a href="archivosDescargables/pag1200+.PNG" class="cortarTexto" title="Pagina en +1200px" download="Plano_Marquesina_2016">
+                    <i class="fas fa-file-download"></i>Pagina en +1200px 
+                </a>
+                <a href="archivosDescargables/pag991-1200.PNG" class="cortarTexto" title="Pagina en 991-1200px" download="Playas_Verano_2019">
+                    <i class="fas fa-file-download"></i>Pagina en 991-1200px
+                </a>
+                <a class="cortarTexto" href="archivosDescargables/pag767-991.PNG" title="Pagina en 767-991px" download>
+                    <i class="fas fa-file-download"></i>Pagina en 767-991px
+                </a>
+                <a class="cortarTexto" href="archivosDescargables/pag500-767.PNG" title="Pagina en 500-767px" download>
+                    <i class="fas fa-file-download"></i>Pagina en 500-767px
+                </a>
+                <a class="cortarTexto" href="archivosDescargables/pag500-MenuOpen.PNG" title="Pagina en -500px" download>
+                    <i class="fas fa-file-download"></i>Pagina en -500px Abierto
+                </a>
+                <a class="cortarTexto" href="archivosDescargables/pag500-MenuClose.PNG" title="Pagina en -500px" download>
+                    <i class="fas fa-file-download"></i>Pagina en -500px Cerrado
+                </a>
+                <a class="cortarTexto text-center" href="#">Pulsa aqu&iacute; para M&aacute;s</a>
+            </div>
+            
+            <div id="juegoPeq" class="flexbox-item">
+                <a href="#">
+                    <div>
+                        ¡Juego para peques!  <!--peques en vez de niños por si hay conficto con la 'ñ'-->
+                    </div>
+                    <img src="fotos/juegoPeques.jpg" title="¡Juego especial para peques!">
+                </a>
+            </div>
+            
+            <div id="nadalBus" class="flexbox-item">
+                <a href="#" title="NadalBus">
+                    <div>
+                        ¡Novedad!
+                    </div>                
+                    <img id="nadalBus-img" src="fotos/nadal-bus2noFondo.png" alt="Nadal bus logo">
+                    <img id="VigoNavidad" src="fotos/Vigo-navidad.png" alt="Vigo, donde vive la Navidad">                
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <section id="dondeEstamos" class="col-lg-4">
+                    <ul>
+                        <li><a class="listaPie primeroFila" id="primeroFila" href="#">Inicio</a></li>
+                        <li><a class="listaPie" id="elementoMasGrande" data-desktoptext="Correo de Contacto" data-phonetext="Contacto" href="#"></a></li>   <!--el id del elemento mas grande se lo damos al enlace que tenga mas caracteres.-->
+                        <li><a class="listaPie ultimoFila" href="#">&Iacute;ndice</a></li>
+                    </ul>
+                    <div id="textoPie">Estamos a su disposición en:<br> Praza do Rei, 36202 Vigo</div>
+                    <hr>
+                    <div id="textoPie2">Tlf. +34 986000000</div>
+                    <hr>
+                    <div id="textoPie3">MoviBus@gmail.com</div>                    
+                </section>
+                <section id="empleados" class="col-lg-4 text-center">
+                    <div><button class="btn">Acceso empleados</button></div>
+                </section>
+                <section id="politicasEmpresa" class="col-lg-4">
+                    <ul>
+                        <li><a class="listaPie primeroFila" href="#">Aviso Legal</a></li>
+                        <li><a class="listaPie" id="elementoMasGrande2" data-desktoptext="Pol&iacute;ticas de Privacidad"  data-phonetext="Privacidad" href="#"></a></li> 
+                    </ul>
+                    <div class="textoPie">MoviBus, &copy; Todos los derechos Reservados .</div>
+                    <div id="todoPoderoso">P&aacute;gina creada por: <span>Diego Barreiro</span></div>
+                </section>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
+
+     
