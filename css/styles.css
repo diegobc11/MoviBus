@@ -942,6 +942,7 @@ footer #todoPoderoso {
         top: 230px;
         left: -50px;
         transform: scale(0.5);
+        width: 300px;
     }
     #sillaRuedas, #idiomas {
         left: 0px;
@@ -1092,9 +1093,6 @@ footer #todoPoderoso {
     #L9A-lab i.fa-expand-arrows-alt, #L9A-fest i.fa-expand-arrows-alt,
     #L27-lab i.fa-expand-arrows-alt{
         margin-left: 35px;
-    }
-    div.search-box {
-        width: 300px;
     }
 }
 /*--------Menu Derecho en max 1199px ----------*/
