@@ -508,7 +508,7 @@ div.navbar .active {
     padding: 2px;
     position: absolute;
     bottom: 120px;
-    margin-left: -55px;
+    margin-left: -60px;
     color: black;
     cursor: pointer;
     z-index: 2;
@@ -563,10 +563,6 @@ div.navbar .active {
     animation: fadeIn 1s;
 }
 @keyframes fadeIn {    /* definimos el estado de fadeIN */
-    from {opacity: 0;} 
-    to {opacity: 1;}
-}
-@-webkit-keyframes fadeIn {
     from {opacity: 0;} 
     to {opacity: 1;}
 }
@@ -1091,6 +1087,14 @@ footer #todoPoderoso {
     }
     #documentosDescarga a:nth-child(6), #documentosDescarga a:nth-child(7) {
         display: block;
+    }
+    #salidas24-31 i.fa-expand-arrows-alt, #salidas24-31segundo i.fa-expand-arrows-alt,
+    #L9A-lab i.fa-expand-arrows-alt, #L9A-fest i.fa-expand-arrows-alt,
+    #L27-lab i.fa-expand-arrows-alt{
+        margin-left: 35px;
+    }
+    div.search-box {
+        width: 300px;
     }
 }
 /*--------Menu Derecho en max 1199px ----------*/
