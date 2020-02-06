@@ -33,10 +33,10 @@ var alturaMenuDer = document.getElementById('menuDerecho').offsetHeight;
 // console.log(document.getElementById('cuerpo').style.height);
 
 ///en movil dejamos que sea solo posible verlo en vertical.
-var xxx = window.matchMedia("(max-width: 500px)");
-if (xxx.matches) {
-  screen.lockOrientation('portrait');
-}
+//var xxx = window.matchMedia("(max-width: 500px)");
+//if (xxx.matches) {
+//  screen.lockOrientation('portrait');
+//}
 
 var xx = window.matchMedia("(min-width: 1200px)");
 var x = window.matchMedia("(min-width: 991px)");
